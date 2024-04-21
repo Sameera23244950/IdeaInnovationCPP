@@ -16,10 +16,10 @@ def feedback(request):
     if request.method=="POST":
         name=request.POST["name"]
         email=request.POST["email"]
-        # title=request.POST["title"]
+        title=request.POST["title"]
         feedback=request.POST["feedback"]
         
-        obj=Feedback(name=name, email=email, feedback=feedback)
+        obj=Feedback(name=name, email=email, title=title, feedback=feedback)
         obj.save()
         return HttpResponse("<h1> Idea has been submitted </h1>")
 
